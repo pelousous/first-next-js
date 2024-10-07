@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from '../components/NavBar'
+import { exo2, raleway } from "./fonts";
 
 import "./global.css";
 
@@ -9,7 +10,7 @@ interface LayoutProps {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${exo2.variable} ${raleway.variable}`}>
       <head></head>
       <body className="flex flex-col px-4 py-2 min-h-screen bg-orange-50">
         <header>

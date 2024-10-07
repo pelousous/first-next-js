@@ -5,8 +5,13 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-exo2)', 'sans-serif'],
+        raleway: ['var(--font-raleway)', 'sans-serif'],
+      }
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
 
