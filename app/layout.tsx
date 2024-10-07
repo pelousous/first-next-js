@@ -3,9 +3,21 @@ import NavBar from '../components/NavBar'
 import { exo2, raleway } from "./fonts";
 
 import "./global.css";
+import { Metadata } from "next";
 
 interface LayoutProps {
   children: React.ReactNode;
+}
+
+
+// set the metadata for all the pages of the app
+// we can add specifics metadata inside the single page
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Indie Gamer',
+    default: 'Indie Gamer',
+  },
+  description: 'Only the best indie games, reviews for you'
 }
 
 export default function RootLayout({ children }: LayoutProps) {

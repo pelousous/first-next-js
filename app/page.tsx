@@ -3,8 +3,6 @@ import Heading from "@/components/Heading";
 import Link from "next/link";
 import { getFeatured } from "@/lib/reviews";
 
-
-
 export default async function HomePage() {
   const featuredReview = await getFeatured();
   //console.log(featuredReview);

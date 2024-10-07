@@ -1,12 +1,29 @@
 import React from "react";
 import Heading from "@/components/Heading";
 import { getReview, getSlugs } from "@/lib/reviews";
+import { Metadata, ResolvingMetadata } from "next";
 
 export async function generateStaticParams() {
   return getSlugs();
 }
 
+type Props = {
+  params: any
+}
 
+export async function generateMetadata(
+  { params: { slug } }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+
+  const review = await getReview(slug);
+
+  console.log(review);
+
+  return {
+    title: review.title,
+  }
+}
 
 export default async function ReviewPage({ params }) {
   const { title, date, image, body } = await getReview(params.slug);
